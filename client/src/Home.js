@@ -1,9 +1,11 @@
-import React from "react";
+import React from "react"
 
 function Home() {
     return (
         <div>
-            <h3>Welcome!</h3>
+            <h1>
+                Welcome!
+            </h1>
         </div>
     )
 }

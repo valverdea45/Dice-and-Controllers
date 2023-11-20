@@ -17,5 +17,6 @@ class SessionsController < ApplicationController
             head :no_content
         else
             render json: {errors: "No User currently logged in"}, status: :unauthorized
+        end
     end
 end
