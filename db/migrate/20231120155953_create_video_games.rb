@@ -3,8 +3,8 @@ class CreateVideoGames < ActiveRecord::Migration[7.0]
     create_table :video_games do |t|
       t.string :name
       t.float :price
-      t.string :item_type
       t.string :description
+      t.string :image
 
       t.timestamps
     end

@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  resources :items, only: [:index]
+  resources :video_games, only: [:index]
+  resources :table_tops, only: [:index]
+  
 
   post "/login", to: "sessions#create"
 
@@ -14,3 +16,15 @@ Rails.application.routes.draw do
 
   post "/signup", to: "users#create"
 end
+
+# class VideoGamesController < ApplicationController
+
+#   skip_before_action :authorize, only: [:index]
+
+#   def index
+#       video_games = VideoGame.all
+#       render json: video_games, status: :ok
+#   end
+
+# end
+
