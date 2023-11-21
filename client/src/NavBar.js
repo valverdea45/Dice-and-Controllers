@@ -11,10 +11,10 @@ function NavBar() {
             <NavLink>
                 Sign Up
             </NavLink>
-            <br/>
+            {/* <br/>
             <NavLink>
                 Cart
-            </NavLink>
+            </NavLink> */}
         </div>
     )
 }
