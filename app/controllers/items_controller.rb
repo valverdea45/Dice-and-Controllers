@@ -1,10 +1,10 @@
 class ItemsController < ApplicationController
 
-    def index
-        byebug
-        video_games = VideoGame.all
-        table_tops = TableTop.all
+    skip_before_action :authorize, only: :index
 
+    def index
+        items = VideoGame.all, TableTop.all 
+        render json: items, status: :ok
     end
 
 end

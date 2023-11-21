@@ -8,6 +8,6 @@
 
 # adrian = User.create(username: "adrian", password: "123456", password_confirmation: "123456", email: "adrian@adrian.com")
 
-chess = TableTop.create(name: "Chess", price: 10.99, type: "Table Top", description: "the best table top")
+chess = TableTop.create(name: "Chess", price: 10.99, item_type: "Table Top", description: "the best table top")
 
-mw3 = VideoGame.create(name: "MW3", price: 61.99, type: "Video Game", description: "this is the best video game")
+mw3 = VideoGame.create(name: "MW3", price: 61.99, item_type: "Video Game", description: "this is the best video game")

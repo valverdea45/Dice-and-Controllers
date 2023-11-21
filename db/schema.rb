@@ -23,7 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_20_155953) do
   create_table "table_tops", force: :cascade do |t|
     t.string "name"
     t.float "price"
-    t.string "type"
+    t.string "item_type"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -42,7 +42,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_20_155953) do
   create_table "video_games", force: :cascade do |t|
     t.string "name"
     t.float "price"
-    t.string "type"
+    t.string "item_type"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
