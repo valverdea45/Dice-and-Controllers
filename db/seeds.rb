@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-adrian = User.create(username: "adrian", password: "123456", password_confirmation: "123456", email: "adrian@adrian.com")
+# adrian = User.create(username: "adrian", password: "123456", password_confirmation: "123456", email: "adrian@adrian.com")
 
-adrian
+chess = TableTop.create(name: "Chess", price: 10.99, type: "Table Top", description: "the best table top")
+
+mw3 = VideoGame.create(name: "MW3", price: 61.99, type: "Video Game", description: "this is the best video game")
