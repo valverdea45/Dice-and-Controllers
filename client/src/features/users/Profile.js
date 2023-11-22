@@ -9,6 +9,12 @@ function Profile() {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
+    if(user === null) {
+        return(
+            <p>loading....</p>
+        )
+    }
+
 
     function handleLogoutClick() {
         fetch("/logout", {

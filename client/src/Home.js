@@ -12,10 +12,14 @@ function Home() {
             {user ?
                 <div>
                     <h1>Welcome {user.username} to Dice and Controllers!</h1>
+                    <br/>
+                    
                 </div>
             : 
             <div>
                 <h1> Welcome to Dice and Controllers!</h1>
+                <br/>
+                <p>try logging in for good deals!</p>
             </div>
             }
         </div>

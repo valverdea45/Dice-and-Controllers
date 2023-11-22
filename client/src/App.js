@@ -8,6 +8,7 @@ import { Route, Routes } from "react-router-dom"
 import { fetchTableTops } from './features/tabletops/tabletopsSlice';
 import { fetchVideoGames } from './features/videogames/videogamesSlice';
 import Profile from "./features/users/Profile"
+import { userLogin } from './features/users/usersSlice';
 
 
 function App() {
@@ -23,6 +24,17 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchVideoGames())
+  }, [dispatch])
+
+  useEffect(() => {
+    fetch("/me")
+    .then((res) => {
+      if (res.ok) {
+        res.json().then((user) => {
+          dispatch(userLogin(user))
+        })
+      }
+    })
   }, [dispatch])
 
 

@@ -24,6 +24,8 @@ function NavBar() {
             <br/>
             <NavLink>Sign Up</NavLink>
             <br/>
+            <NavLink> Table Tops and Video Games </NavLink>
+            <br/>
             <NavLink>Best Sellers</NavLink>
             </div>}
         </div>
