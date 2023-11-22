@@ -8,8 +8,7 @@ function Profile() {
     const user = useSelector((state) => state.users.user)
     const dispatch = useDispatch()
     const navigate = useNavigate()
-   
-    console.log(user)
+
 
     function handleLogoutClick() {
         fetch("/logout", {
