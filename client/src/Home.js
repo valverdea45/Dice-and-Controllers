@@ -1,5 +1,6 @@
 import React from "react"
 import { useSelector } from "react-redux"
+import ItemsContainer from "./ItemsContainer"
 
 function Home() {
 
@@ -20,6 +21,9 @@ function Home() {
                 <p>try logging in for good deals!</p>
             </div>
             }
+
+            <ItemsContainer/>
+
         </div>
     )
 }

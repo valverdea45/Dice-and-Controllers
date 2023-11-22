@@ -13,8 +13,8 @@ import { userLogin } from './features/users/usersSlice';
 
 function App() {
 
-  const allTableTops = useSelector((state) => state.tabletops.entities)
-  const allVideoGames = useSelector((state) => state.videogames.entities)
+  // const allTableTops = useSelector((state) => state.tabletops.entities)
+  // const allVideoGames = useSelector((state) => state.videogames.entities)
   const dispatch = useDispatch()
 
 
@@ -36,10 +36,6 @@ function App() {
       }
     })
   }, [dispatch])
-
-
-  console.log("all video games", allVideoGames)
-  console.log("all table tops", allTableTops)
 
  
 
