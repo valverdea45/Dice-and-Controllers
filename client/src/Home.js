@@ -5,8 +5,6 @@ function Home() {
 
     const user = useSelector((state) => state.users.user)
 
-    console.log(user)
-
     return (
         <div>
             {user ?

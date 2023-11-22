@@ -17,6 +17,8 @@ function NavBar() {
               <NavLink>Deals</NavLink>
               <br/>
               <NavLink>Best Sellers</NavLink>
+              <br/>
+              <NavLink> Home </NavLink>
             </div>
             :
             <div>
@@ -24,7 +26,7 @@ function NavBar() {
             <br/>
             <NavLink>Sign Up</NavLink>
             <br/>
-            <NavLink> Table Tops and Video Games </NavLink>
+            <NavLink>Home</NavLink>
             <br/>
             <NavLink>Best Sellers</NavLink>
             </div>}
