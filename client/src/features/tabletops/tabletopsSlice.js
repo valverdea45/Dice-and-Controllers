@@ -7,7 +7,7 @@ export const fetchTableTops = createAsyncThunk("tabletops/fetchTableTops", () =>
 })
 
 const initialState = {
-    tableTops: [],
+    entities: [],
     status: "idle"
 }
 
@@ -20,11 +20,11 @@ const tabletopsSlice = createSlice({
     extraReducers: {
         [fetchTableTops.pending](state){
             state.status = "loading"
-        }
-        [fetchTableTops.fulfilled](state){
-            state.tableTops = action.payload
+        },
+        [fetchTableTops.fulfilled](state, action){
+            state.entities = action.payload
             state.status = "idle"
-        }
+        } 
     }
 })
 

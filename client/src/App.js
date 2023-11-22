@@ -6,32 +6,28 @@ import Home from "./Home"
 import LogIn from "./features/users/LogIn"
 import NavBar from "./NavBar"
 import { Route, Routes } from "react-router-dom"
+import { fetchTableTops } from './features/tabletops/tabletopsSlice';
+import { fetchVideoGames } from './features/videogames/videogamesSlice';
 
 
 function App() {
-
-  const [videoGames, setVideoGames] = useState([])
-  const [ tableTops, setTableTops ] = useState([])
-
-  const state = useSelector((state) => state.reviews.entities)
+  
+  const allTableTops = useSelector((state) => state.tabletops.entities)
+  const allVideoGames = useSelector((state) => state.videogames.entities)
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    fetch("/video_games")
-    .then((videoGames) => videoGames.json())
-    .then((videoGames) => setVideoGames(videoGames))
-  }, [])
 
   useEffect(() => {
-    fetch("/table_tops")
-    .then((tableTops) => tableTops.json())
-    .then((tableTops) => setTableTops(tableTops) ) 
-  }, [])
+    dispatch(fetchTableTops())
+  }, [dispatch])
+
+  useEffect(() => {
+    dispatch(fetchVideoGames())
+  }, [dispatch])
 
 
-
-  console.log(videoGames)
-  console.log(tableTops)
+  console.log("all video games", allVideoGames)
+  console.log("all table tops", allTableTops)
 
   function handleClick() {
     dispatch((reviewAdded({
