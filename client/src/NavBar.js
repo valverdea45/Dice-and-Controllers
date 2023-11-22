@@ -12,7 +12,7 @@ function NavBar() {
         <div>
             {user ? 
             <div>
-              <NavLink>Profile</NavLink>
+              <NavLink exact to="/Profile">Profile</NavLink>
               <br/> 
               <NavLink>Deals</NavLink>
               <br/>

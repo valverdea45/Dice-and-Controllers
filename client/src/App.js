@@ -7,6 +7,7 @@ import NavBar from "./NavBar"
 import { Route, Routes } from "react-router-dom"
 import { fetchTableTops } from './features/tabletops/tabletopsSlice';
 import { fetchVideoGames } from './features/videogames/videogamesSlice';
+import Profile from "./features/users/Profile"
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="LogIn" element={<LogIn/>}/>
+          <Route path="/Profile" element={<Profile/>}/>
         </Routes>
     </div>
   );
