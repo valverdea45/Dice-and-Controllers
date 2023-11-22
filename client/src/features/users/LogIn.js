@@ -1,38 +1,48 @@
 import React, { useState } from "react"
+import { useDispatch } from "react-redux"
+import { userLogin } from "./usersSlice"
+import { useNavigate } from "react-router-dom"
+
 
 function LogIn() {
     const [ username, setUsername ] = useState("")
     const [ password, setPassword ] = useState("")
-    // const [ errors, setErrors ] = useState(null)
+    const [ errors, setErrors ] = useState(null)
+
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     function handleSubmit(e) {
         e.preventDefault()
 
-    //     const objToBeSent = {
-    //         username: username,
-    //         password: password
-    //     }
+        const objToBeSent = {
+            username: username,
+            password: password
+        }
 
-    //     fetch("/login", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify(objToBeSent)
-    //     })
-    //     .then((res) => {
-    //         if(res.ok){
-    //             res.json().then((user) => {
-    //                 setUser(user)
-    //             })
-    //             setErrors(null)
-    //         } else {
-    //             res.json().then((e) => setErrors(e.errors))
-    //         }
-    //     })
+        fetch("/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(objToBeSent)
+        })
+        .then((res) => {
+            if(res.ok){
+                res.json().then((user) => {
+                    dispatch(userLogin(user))
+                    navigate("/")
 
-    //     setUsername("")
-    //     setPassword("")
+                })
+                setErrors(null)
+            } else {
+                res.json().then((e) => setErrors(e.errors))
+            }
+        })
+
+        setUsername("")
+        setPassword("")
+
     }
 
     return (
@@ -48,7 +58,7 @@ function LogIn() {
                 <input onChange={(e) => setPassword(e.target.value)} value={password} type="text"/>
                 <br/>
                 <button type="submit">Log In</button>
-                {/* {errors ? (<p>{`${errors}`}</p>) : null} */}
+                {errors ? (<p>{`${errors}`}</p>) : null}
             </form>
         </div>
     )

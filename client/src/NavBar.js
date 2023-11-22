@@ -1,20 +1,31 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
+import { useSelector } from "react-redux" 
 
 function NavBar() {
+
+    const user = useSelector((state) => state.users.user)
+
+
+
     return (
         <div>
-            <NavLink exact to="/LogIn">
-                Log In
-            </NavLink>
+            {user ? 
+            <div>
+              <NavLink>Profile</NavLink>
+              <br/> 
+              <NavLink>Deals</NavLink>
+              <br/>
+              <NavLink>Best Sellers</NavLink>
+            </div>
+            :
+            <div>
+            <NavLink exact to="/LogIn">Log In</NavLink>
             <br/>
-            <NavLink>
-                Sign Up
-            </NavLink>
-            {/* <br/>
-            <NavLink>
-                Cart
-            </NavLink> */}
+            <NavLink>Sign Up</NavLink>
+            <br/>
+            <NavLink>Best Sellers</NavLink>
+            </div>}
         </div>
     )
 }
