@@ -8,6 +8,7 @@ import { fetchTableTops } from './features/items/tabletops/tabletopsSlice';
 import { fetchVideoGames } from './features/items/videogames/videogamesSlice';
 import Profile from "./features/users/Profile"
 import { userLogin } from './features/users/usersSlice';
+import Item from './features/items/Item';
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
           <Route path="LogIn" element={<LogIn/>}/>
           <Route path="/Profile" element={<Profile/>}/>
           <Route path="/Home" element={<Home/>}/>
+          <Route path="/Item" element={<Item/>}/>
         </Routes>
     </div>
   );

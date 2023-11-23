@@ -12,8 +12,7 @@ function ItemCard({ item }) {
 
 
     function handleClick() {
-        console.log("I was clicked")
-        
+        navigate("/Item", {state: item.id})
     }
 
     return (
