@@ -12,7 +12,7 @@ function ItemCard({ item }) {
 
 
     function handleClick() {
-        navigate("/Item", {state: item.id})
+        navigate("/Item", {state: item})
     }
 
     return (
