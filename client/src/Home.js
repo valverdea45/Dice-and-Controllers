@@ -1,6 +1,6 @@
 import React from "react"
 import { useSelector } from "react-redux"
-import ItemsContainer from "./ItemsContainer"
+import ItemsContainer from "./features/items/ItemsContainer"
 
 function Home() {
 

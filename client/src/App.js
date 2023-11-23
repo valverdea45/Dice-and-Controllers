@@ -1,20 +1,17 @@
 import React, { useEffect } from 'react';
-import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import Home from "./Home"
 import LogIn from "./features/users/LogIn"
 import NavBar from "./NavBar"
 import { Route, Routes } from "react-router-dom"
-import { fetchTableTops } from './features/tabletops/tabletopsSlice';
-import { fetchVideoGames } from './features/videogames/videogamesSlice';
+import { fetchTableTops } from './features/items/tabletops/tabletopsSlice';
+import { fetchVideoGames } from './features/items/videogames/videogamesSlice';
 import Profile from "./features/users/Profile"
 import { userLogin } from './features/users/usersSlice';
 
 
 function App() {
 
-  // const allTableTops = useSelector((state) => state.tabletops.entities)
-  // const allVideoGames = useSelector((state) => state.videogames.entities)
   const dispatch = useDispatch()
 
 
@@ -49,6 +46,7 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="LogIn" element={<LogIn/>}/>
           <Route path="/Profile" element={<Profile/>}/>
+          <Route path="/Home" element={<Home/>}/>
         </Routes>
     </div>
   );

@@ -18,7 +18,7 @@ function NavBar() {
               <br/>
               <NavLink>Add an Item to Sell</NavLink>
               <br/>
-              <NavLink>Home</NavLink>
+              <NavLink exact to="/Home">Home</NavLink>
             </div>
             :
             <div>
@@ -26,7 +26,7 @@ function NavBar() {
             <br/>
             <NavLink>Sign Up</NavLink>
             <br/>
-            <NavLink>Home</NavLink>
+            <NavLink exact to="/Home">Home</NavLink>
             </div>}
         </div>
     )

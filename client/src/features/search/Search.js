@@ -1,6 +1,6 @@
 import React from "react"
 import { useDispatch } from "react-redux"
-import { onUpdateSearch } from "./features/search/searchSlice"
+import { onUpdateSearch } from "./searchSlice"
 
 function Search() {
 
@@ -12,7 +12,9 @@ function Search() {
 
     return (
         <div>
-            <input onChange={handleSearchChange}/>
+            <label>Search</label>
+            <br/>
+            <input onChange={handleSearchChange}/> 
         </div>
     )
 }
