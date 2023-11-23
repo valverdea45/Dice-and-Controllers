@@ -1,5 +1,6 @@
 import React from "react"
 import { useLocation } from "react-router-dom"
+import ReviewList from "../reviews/ReviewList"
 
 function Item()  {
 
@@ -23,7 +24,7 @@ function Item()  {
             <p>price: {item.price}</p>
             <p>game type: {item.type_of}</p>
             <p>description: {item.description}</p>
-            
+            <ReviewList />
             
         </div>
     )

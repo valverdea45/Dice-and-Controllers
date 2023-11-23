@@ -6,6 +6,7 @@ import NavBar from "./NavBar"
 import { Route, Routes } from "react-router-dom"
 import { fetchTableTops } from './features/items/tabletops/tabletopsSlice';
 import { fetchVideoGames } from './features/items/videogames/videogamesSlice';
+import { fetchReviews } from './features/reviews/reviewsSlice';
 import Profile from "./features/users/Profile"
 import { userLogin } from './features/users/usersSlice';
 import Item from './features/items/Item';
@@ -23,6 +24,10 @@ function App() {
   useEffect(() => {
     dispatch(fetchVideoGames())
   }, [dispatch])
+
+  useEffect(() => {
+    dispatch(fetchReviews())
+  },[dispatch])
 
   useEffect(() => {
     fetch("/me")

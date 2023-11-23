@@ -1,5 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit"
-import { v4 as uuid } from "uuid"
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
+
+export const fetchReviews = createAsyncThunk("reviews/fetchReviews", () => {
+    return fetch("/reviews")
+    .then((resp) => resp.json())
+    .then((reviews) => reviews)
+})
 
 const reviewsSlice = createSlice({
     name: "reviews",
@@ -9,7 +14,7 @@ const reviewsSlice = createSlice({
     reducers: {
         reviewAdded(state, action) {
             state.entities.push({
-                id: uuid(),
+                id: action.id,
                 userId: action.payload.userId,
                 itemId: action.payload.itemId,
                 comment: action.payload.comment
