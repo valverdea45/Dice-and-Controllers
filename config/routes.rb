@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :video_games, only: [:index]
   resources :table_tops, only: [:index]
+  resources :reviews, only: [:index]
   
 
   post "/login", to: "sessions#create"
