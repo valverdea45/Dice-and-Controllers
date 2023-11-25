@@ -5,7 +5,7 @@ class TableTopReviewsController < ApplicationController
         render json: reviews, status: :ok
     end
 
-    def created
+    def create
         new_review = @user.table_top_reviews.create(review_params)
         render json: new_review, status: :created
     end
@@ -13,7 +13,7 @@ class TableTopReviewsController < ApplicationController
     private
 
     def review_params
-        params.permit(:body, table_top_id)
+        params.permit(:body, :table_top_id, :user_id)
     end
 
 end

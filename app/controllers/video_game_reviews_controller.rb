@@ -13,7 +13,7 @@ class VideoGameReviewsController < ApplicationController
     private
 
     def review_params
-        params.permit(:body, :video_game_id)
+        params.permit(:body, :video_game_id, :user_id)
     end
 
 

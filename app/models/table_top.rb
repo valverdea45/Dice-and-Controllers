@@ -1,5 +1,5 @@
 class TableTop < ApplicationRecord
-    has_many :reviews
-    has_many :users, through: :reviews
+    has_many :table_top_reviews
+    has_many :users, through: :table_top_reviews
     
 end
