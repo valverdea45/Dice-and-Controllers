@@ -7,12 +7,15 @@ function ReviewList({ item }) {
     if(item.type_of === "videogame") {
         const VGR = useSelector((state) => state.reviews.videoGameReviews)
         const correctReviews = VGR.filter((review) => {
-            return review.id === item.id
+            return review.video_game_id === item.id
         })
 
         const reviewsToRender = correctReviews.map((review) => {
             return <Review review={review}/>
         })
+
+        debugger
+
         return (
             <div>
                 {reviewsToRender}

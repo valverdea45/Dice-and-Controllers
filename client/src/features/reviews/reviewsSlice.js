@@ -22,12 +22,22 @@ const reviewsSlice = createSlice({
     },
     reducers: {
         reviewAdded(state, action) {
-            state.entities.push({
-                id: action.id,
-                userId: action.payload.userId,
-                itemId: action.payload.itemId,
-                comment: action.payload.comment
-            })
+            debugger
+            if (action.payload.table_top_id) {
+                state.reviews.tableTopReviews.push({
+                    id: action.payload.id,
+                    table_top_id: action.payload.table_top_id,
+                    body: action.payload.body,
+                    username: action.payload.username
+                })
+            } else {
+                state.reviews.videoGameReviews.push({
+                    id: action.payload.id,
+                    video_game_id: action.payload.video_game_id,
+                    body: action.payload.body,
+                    username: action.payload.username
+                })
+            }
         },
         reviewRemoved(state, action) {
             const index = state.entities.findIndex((review) => review.id === action.payload)
