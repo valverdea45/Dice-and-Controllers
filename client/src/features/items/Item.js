@@ -25,6 +25,7 @@ function Item()  {
             <p>price: {item.price}</p>
             <p>game type: {item.type_of}</p>
             <p>description: {item.description}</p>
+            <br/>
             <ReviewList item={item}/>
             
         </div>

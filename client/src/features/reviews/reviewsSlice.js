@@ -15,11 +15,10 @@ export const fetchVideoGameReviews = createAsyncThunk("reviews/fetchVideoGameRev
 const reviewsSlice = createSlice({
     name: "reviews",
     initialState: {
-        allReviews: {
-            videoGameReviews: [],
-            tableTopReviews: []
-        },
-        status: "idle"
+        videoGameReviews: [],
+        tableTopReviews: [],
+        VGRStatus: "idle",
+        TTRStatus: "idle"
     },
     reducers: {
         reviewAdded(state, action) {
@@ -41,18 +40,18 @@ const reviewsSlice = createSlice({
     },
     extraReducers: {
         [fetchTableTopReviews.pending](state){
-            state.status = "loading"
+            state.TTRStatus = "loading"
         },
         [fetchVideoGameReviews.pending](state){
-            state.status = "loading"
+            state.VGRStatus = "loading"
         },
         [fetchTableTopReviews.fulfilled](state, action){
-            state.allReviews.tableTopReviews = action.payload
-            state.status = "idle"
+            state.tableTopReviews = action.payload
+            state.TTRStatus = "idle"
         },
         [fetchVideoGameReviews.fulfilled](state, action){
-            state.allReviews.videoGameReviews = action.payload
-            state.status = "idle"
+            state.videoGameReviews = action.payload
+            state.VGRStatus = "idle"
         }
     }
 })
