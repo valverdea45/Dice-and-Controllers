@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   resources :video_games, only: [:index]
   resources :table_tops, only: [:index]
-  resources :reviews, only: [:index]
+  resources :video_game_reviews, only: [:index, :create]
+  resources :table_top_reviews, only: [:index, :create]
   
 
   post "/login", to: "sessions#create"
@@ -16,16 +17,5 @@ Rails.application.routes.draw do
   get "/me", to: "users#show"
 
   post "/signup", to: "users#create"
+
 end
-
-# class VideoGamesController < ApplicationController
-
-#   skip_before_action :authorize, only: [:index]
-
-#   def index
-#       video_games = VideoGame.all
-#       render json: video_games, status: :ok
-#   end
-
-# end
-

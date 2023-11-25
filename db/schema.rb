@@ -10,12 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_20_155953) do
-  create_table "reviews", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2023_11_25_035456) do
+  create_table "table_top_reviews", force: :cascade do |t|
     t.string "body"
-    t.integer "item_id"
+    t.integer "table_top_id"
     t.integer "user_id"
-    t.integer "likes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,6 +35,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_20_155953) do
     t.string "password"
     t.string "email"
     t.string "bio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "video_game_reviews", force: :cascade do |t|
+    t.string "body"
+    t.integer "video_game_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -13,5 +13,3 @@ chess = TableTop.create(name: "Chess", price: 10.99, type_of: "tabletop", descri
 mw3 = VideoGame.create(name: "MW3", price: 61.99, type_of: "videogame", description: "this is the best video game", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFh4n6gkmmKoE-BkJsiDCVjBSNW0iqiE8iMdBdMop7&s")
 
 # r1 = mw3.reviews.create(body: "this game is way to expensive bro", item_id: mw3.id, user_id: adrian.id, likes: 0 )
-
-# byebug
