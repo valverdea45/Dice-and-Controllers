@@ -1,6 +1,6 @@
 import React from "react"
 import { useLocation } from "react-router-dom"
-import ReviewList from "../reviews/ReviewList"
+import ReviewContainer from "../reviews/ReviewContainer"
 
 function Item()  {
 
@@ -26,7 +26,7 @@ function Item()  {
             <p>game type: {item.type_of}</p>
             <p>description: {item.description}</p>
             <br/>
-            <ReviewList item={item}/>
+            <ReviewContainer item={item}/>
             
         </div>
     )
