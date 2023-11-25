@@ -1,5 +1,7 @@
 class VideoGameReviewsController < ApplicationController
 
+    skip_before_action :authorize, only: [:index]
+
     def index
         reviews = VideoGameReview.all
         render json: reviews, state: :ok

@@ -6,6 +6,7 @@ function Item()  {
 
     const location = useLocation()
     const item = location.state
+
     const imageDisplay = {
         height: "15rem",
         width: "22rem"
@@ -24,7 +25,7 @@ function Item()  {
             <p>price: {item.price}</p>
             <p>game type: {item.type_of}</p>
             <p>description: {item.description}</p>
-            <ReviewList />
+            <ReviewList item={item}/>
             
         </div>
     )

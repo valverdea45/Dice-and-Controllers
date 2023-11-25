@@ -9,13 +9,6 @@ function ItemsContainer() {
     const tableTops = useSelector((state) => state.tabletops.entities)
     const search = useSelector((state) => state.search.value)
     const allItems = videogames.concat(tableTops)
-    const state = useSelector((state) => state)
-
-    console.log(state)
-
-    console.log(search)
-
-    
 
     
 

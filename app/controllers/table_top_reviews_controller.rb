@@ -1,7 +1,9 @@
 class TableTopReviewsController < ApplicationController
 
+    skip_before_action :authorize, only: [:index]
+
     def index
-        reviews = TableTopReviews.all
+        reviews = TableTopReview.all
         render json: reviews, status: :ok
     end
 
