@@ -8,6 +8,8 @@ function ReviewForm({ handleClick, item }) {
     const user = useSelector((state) => state.users.user)
     const dispatch = useDispatch()
 
+    
+
     function handleSubmit(e) {
         e.preventDefault()
 
@@ -33,8 +35,30 @@ function ReviewForm({ handleClick, item }) {
                     })
                 }
             })
-        }
+        } else if (item.type_of === "tabletop") {
+            const objToBeSent = {
+                body: body,
+                user_id: user.id,
+                table_top_id: item.id
+            }
 
+            fetch("/table_top_reviews", {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(objToBeSent)
+            })
+            .then((res) => {
+                if(res.ok) {
+                    res.json().then((newReview) => {
+                        dispatch(reviewAdded(newReview))
+                    })
+                }
+            })
+
+        }
+        setBody("")
     }
 
     return (

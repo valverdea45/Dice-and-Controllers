@@ -14,8 +14,6 @@ function ReviewList({ item }) {
             return <Review review={review}/>
         })
 
-        debugger
-
         return (
             <div>
                 {reviewsToRender}
@@ -26,7 +24,7 @@ function ReviewList({ item }) {
     const TTR = useSelector((state) => state.reviews.tableTopReviews)
 
     const correctReviews = TTR.filter((review) => {
-        return review.id === item.id
+        return review.table_top_id === item.id
     })
 
     const reviewsToRender = correctReviews.map((review) => {
