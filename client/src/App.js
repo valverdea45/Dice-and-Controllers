@@ -10,6 +10,7 @@ import Profile from "./features/users/Profile"
 import { userLogin } from './features/users/usersSlice';
 import Item from './features/items/Item';
 import { fetchTableTopReviews, fetchVideoGameReviews } from './features/reviews/reviewsSlice';
+import SignUp from './SignUp';
 
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
           <Route path="/Profile" element={<Profile/>}/>
           <Route path="/Home" element={<Home/>}/>
           <Route path="/Item" element={<Item/>}/>
+          <Route path="/SignUp" element={<SignUp/>}/>
         </Routes>
     </div>
   );

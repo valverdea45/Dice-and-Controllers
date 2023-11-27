@@ -24,7 +24,7 @@ function NavBar() {
             <div>
             <NavLink exact to="/LogIn">Log In</NavLink>
             <br/>
-            <NavLink>Sign Up</NavLink>
+            <NavLink exact to="/SignUp" >Sign Up</NavLink>
             <br/>
             <NavLink exact to="/Home">Home</NavLink>
             </div>}
