@@ -38,8 +38,13 @@ const reviewsSlice = createSlice({
             }
         },
         reviewsUpdated(state, action) {
-            const index = state.entities.findIndex((review) => review.id === action.payload.id)
-            state.entities.splice(index, 1, action.payload)
+            if(action.payload.video_game_id) {
+                const index = state.videoGameReviews.findIndex((review) => review.id === action.payload.id)
+                state.videoGameReviews.splice(index, 1, action.payload)
+            } else if(action.payload.table_top_id) {
+                const index = state.tableTopReviews.findIndex((review) => review.id === action.payload.id)
+                state.tableTopReviews.splice(index, 1, action.payload)
+            }
         }
     },
     extraReducers: {
@@ -60,6 +65,6 @@ const reviewsSlice = createSlice({
     }
 })
 
-export const { reviewAdded, reviewRemoved, reviewUpdated } = reviewsSlice.actions
+export const { reviewAdded, reviewRemoved, reviewsUpdated } = reviewsSlice.actions
 
 export default reviewsSlice.reducer

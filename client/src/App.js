@@ -16,7 +16,6 @@ function App() {
 
   const dispatch = useDispatch()
 
-
   useEffect(() => {
     dispatch(fetchTableTops())
   }, [dispatch])

@@ -6,8 +6,8 @@ Rails.application.routes.draw do
 
   resources :video_games, only: [:index]
   resources :table_tops, only: [:index]
-  resources :video_game_reviews, only: [:index, :create, :destroy]
-  resources :table_top_reviews, only: [:index, :create, :destroy]
+  resources :video_game_reviews, only: [:index, :create, :destroy, :update]
+  resources :table_top_reviews, only: [:index, :create, :destroy, :update]
   
 
   post "/login", to: "sessions#create"

@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { reviewAdded } from "./reviewsSlice"
 
-function ReviewForm({ handleClick, item }) {
+function ReviewForm({ handleClick, item, setShowReviewForm }) {
 
     const [body, setBody] = useState("")
     const user = useSelector((state) => state.users.user)
@@ -59,6 +59,7 @@ function ReviewForm({ handleClick, item }) {
 
         }
         setBody("")
+        setShowReviewForm(false)
     }
 
     return (

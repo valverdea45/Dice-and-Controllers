@@ -23,7 +23,7 @@ function ReviewContainer({ item }) {
             <h4>Reviews</h4>
             { showReviewForm ? 
             <div>
-                <ReviewForm item={item} handleClick={handleClick}/>
+                <ReviewForm item={item} handleClick={handleClick} setShowReviewForm={setShowReviewForm}/>
             </div>
             :
             <div>
