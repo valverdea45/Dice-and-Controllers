@@ -11,7 +11,7 @@ function ReviewList({ item }) {
         })
 
         const reviewsToRender = correctReviews.map((review) => {
-            return <Review review={review}/>
+            return <Review review={review} item={item}/>
         })
 
         return (
@@ -28,7 +28,7 @@ function ReviewList({ item }) {
     })
 
     const reviewsToRender = correctReviews.map((review) => {
-        return <Review review={review}/>
+        return <Review review={review} item={item}/>
     })
 
     return (

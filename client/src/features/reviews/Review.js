@@ -1,13 +1,29 @@
 import React from "react"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
+import { reviewRemoved } from "./reviewsSlice"
 
-function Review({ review }) {
+function Review({ review, item }) {
 
     
     const user = useSelector((state) => state.users.user)
+    const dispatch = useDispatch()
 
     function handleDeleteClick() {
         console.log("I was clicked! YAY!")
+        if(item.type_of === "videogame") {
+            fetch(`/video_game_reviews/${review.id}`, {
+                method: "DELETE"
+            })
+            .then((res) => res.json())
+            .then((oldReview) => dispatch(reviewRemoved(oldReview)))
+        } else if(item.type_of === "tabletop") {
+            fetch(`/table_top_reviews/${review.id}` , {
+                method: "DELETE"
+            })
+            .then((res) => res.json())
+            .then((oldReview) => dispatch(reviewRemoved(oldReview)))
+        }
+        
     }
 
     return (

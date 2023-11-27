@@ -12,10 +12,20 @@ class VideoGameReviewsController < ApplicationController
         render json: new_review, status: :created
     end
 
+    def destroy
+        review = find_review
+        review.destroy
+        render json: review, status: :ok
+    end
+
     private
 
     def review_params
         params.permit(:body, :video_game_id, :user_id)
+    end
+
+    def find_review
+        @user.video_game_reviews.find_by!(id: params[:id])
     end
 
 

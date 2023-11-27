@@ -29,8 +29,13 @@ const reviewsSlice = createSlice({
             }
         },
         reviewRemoved(state, action) {
-            const index = state.entities.findIndex((review) => review.id === action.payload)
-            state.entities.splice(index, 1)
+            if (action.payload.video_game_id) {
+                const index = state.videoGameReviews.findIndex((review) => review.id === action.payload.id)
+                state.videoGameReviews.splice(index, 1)
+            } else if (action.payload.table_top_id) {
+                const index = state.tableTopReviews.findIndex((review) => review.id === action.payload.id)
+                state.tableTopReviews.splice(index, 1)
+            }
         },
         reviewsUpdated(state, action) {
             const index = state.entities.findIndex((review) => review.id === action.payload.id)
