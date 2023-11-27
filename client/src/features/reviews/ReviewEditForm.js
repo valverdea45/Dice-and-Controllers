@@ -5,11 +5,18 @@ import { reviewsUpdated } from "./reviewsSlice"
 function ReviewEditForm({ review, item, handleEditClick, setEditMode}) {
 
     const [ body, setBody ] = useState(review.body)
+    const [ currentReview, setCurrentReview ] = useState(review.body)
+    const [ errors, setErrors ] = useState(null)
     const user = useSelector((state) => state.users.user)
     const dispatch = useDispatch()
 
     function handleEditSubmit(e) {
         e.preventDefault()
+
+        if(body === currentReview) {
+            setErrors(["must submit an edited review"])
+            return null
+        }
 
         if(item.type_of === "videogame") {
 
@@ -30,10 +37,11 @@ function ReviewEditForm({ review, item, handleEditClick, setEditMode}) {
                 if(res.ok) {
                     res.json().then((editedReview) => {
                         dispatch(reviewsUpdated(editedReview))
+                        setEditMode(false)
                     })
                 } else {
-                    res.json().then((res) => {
-                        console.log(res)
+                    res.json().then((e) => {
+                        setErrors(e.errors)
                     })
                 }
             })
@@ -56,16 +64,16 @@ function ReviewEditForm({ review, item, handleEditClick, setEditMode}) {
                 if (res.ok) {
                     res.json().then((editedReview) => {
                         dispatch(reviewsUpdated(editedReview))
+                        setEditMode(false)
                     })
                 } else {
-                    res.json.then((res) => {
-                        console.log(res)
+                    res.json().then((e) => {
+                        setErrors(e.errors)
                     })
                 }
             })
 
         }
-        setEditMode(false)
     }
 
 
@@ -77,6 +85,10 @@ function ReviewEditForm({ review, item, handleEditClick, setEditMode}) {
                 <button type="submit">Submit</button>
             </form>
             <button onClick={handleEditClick}> Cancel </button>
+            <ul>
+              {errors ? (errors.map((error) => <li>{error}</li>)) : null}  
+            </ul>
+            
         </div>
     )
 }

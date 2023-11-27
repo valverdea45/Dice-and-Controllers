@@ -9,7 +9,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :review_not_found_response
     end
 
     def create
-        new_review = @user.video_game_reviews.create(review_params)
+        new_review = @user.video_game_reviews.create!(review_params)
         render json: new_review, status: :created
     end
 

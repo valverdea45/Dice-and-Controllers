@@ -10,7 +10,7 @@ import Profile from "./features/users/Profile"
 import { userLogin } from './features/users/usersSlice';
 import Item from './features/items/Item';
 import { fetchTableTopReviews, fetchVideoGameReviews } from './features/reviews/reviewsSlice';
-import SignUp from './SignUp';
+import SignUp from './features/users/SignUp';
 
 
 function App() {

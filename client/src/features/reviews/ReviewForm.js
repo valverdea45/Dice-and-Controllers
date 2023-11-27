@@ -7,6 +7,7 @@ function ReviewForm({ handleClick, item, setShowReviewForm }) {
     const [body, setBody] = useState("")
     const user = useSelector((state) => state.users.user)
     const dispatch = useDispatch()
+    const [ errors, setErrors ] = useState(null)
 
     
 
@@ -32,7 +33,12 @@ function ReviewForm({ handleClick, item, setShowReviewForm }) {
                 if(res.ok){
                     res.json().then((newReview) => {
                         dispatch(reviewAdded(newReview))
+                        setErrors(null)
+                        setBody("")
+                        setShowReviewForm(false)
                     })
+                } else {
+                    res.json().then((e) => setErrors(e.errors))
                 }
             })
         } else if (item.type_of === "tabletop") {
@@ -53,13 +59,20 @@ function ReviewForm({ handleClick, item, setShowReviewForm }) {
                 if(res.ok) {
                     res.json().then((newReview) => {
                         dispatch(reviewAdded(newReview))
+                        setErrors(null)
+                        setBody("")
+                        setShowReviewForm(false)
                     })
+                } else {
+                
+                    res.json().then((error) => {
+                        setErrors(error.errors)
+                    })
+
                 }
             })
 
         }
-        setBody("")
-        setShowReviewForm(false)
     }
 
     return (
@@ -71,6 +84,9 @@ function ReviewForm({ handleClick, item, setShowReviewForm }) {
                 <button type="submit">Submit</button>
             </form>
             <button onClick={handleClick}>Cancel</button>
+            <ul>
+                {errors ? (errors.map((error) => <li>{`${error}`}</li>)) : null}
+            </ul>
         </div>
     )
 }
