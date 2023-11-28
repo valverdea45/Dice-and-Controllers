@@ -11,8 +11,10 @@ function ItemCard({ item }) {
     }
 
 
+    
+
     function handleClick() {
-        navigate("/Item", {state: item})
+        navigate(`/Item/${item.type_of}s/${item.id}`)
     }
 
     return (
