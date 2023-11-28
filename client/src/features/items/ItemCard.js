@@ -19,8 +19,8 @@ function ItemCard({ item }) {
         <div onClick={handleClick}>
             <p>{item.name}</p>
             <img style={imageDisplay} src={item.image} alt={item.name}/>
-            <p>{item.price}</p>
-            <p>{item.description}</p>
+            <p>Price: ${item.price}</p>
+            <p>Description: {item.description}</p>
         </div>
     )
 }

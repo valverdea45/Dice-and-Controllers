@@ -15,6 +15,7 @@ function AddItem() {
     const [ image, setImage ] = useState("")
     const [ errors, setErrors ] = useState(null)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
 
 
@@ -51,6 +52,7 @@ function AddItem() {
                         setPrice(0.00)
                         setTypeOf("")
                         setImage("")
+                        navigate("/")
                     })
                 } else {
                     res.json().then((e) => {
@@ -77,6 +79,7 @@ function AddItem() {
                         setPrice(0.00)
                         setTypeOf("")
                         setImage("")
+                        navigate("/")
                     })
                 } else {
                     res.json().then((e) => {

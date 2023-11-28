@@ -12,7 +12,7 @@ function Search() {
 
     return (
         <div>
-            <label>Search</label>
+            <label>Search by Name</label>
             <br/>
             <input onChange={handleSearchChange}/> 
         </div>
