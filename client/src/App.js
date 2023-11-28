@@ -11,6 +11,7 @@ import { userLogin } from './features/users/usersSlice';
 import Item from './features/items/Item';
 import { fetchTableTopReviews, fetchVideoGameReviews } from './features/reviews/reviewsSlice';
 import SignUp from './features/users/SignUp';
+import AddItem from './features/items/AddItem';
 
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
           <Route path="/Home" element={<Home/>}/>
           <Route path="/Item" element={<Item/>}/>
           <Route path="/SignUp" element={<SignUp/>}/>
+          <Route path="/AddItem" element={<AddItem/>}/>
         </Routes>
     </div>
   );

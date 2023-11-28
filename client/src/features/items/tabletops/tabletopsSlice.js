@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit" 
+import reviewsSlice from "../../reviews/reviewsSlice"
 
 export const fetchTableTops = createAsyncThunk("tabletops/fetchTableTops", () => {
     return fetch("/table_tops")
@@ -15,7 +16,9 @@ const tabletopsSlice = createSlice({
     name: "tabletops",
     initialState,
     reducers: {
-
+        tableTopAdded(state, action) {
+            state.entities.push(action.payload)
+        }
     },
     extraReducers: {
         [fetchTableTops.pending](state){
@@ -27,6 +30,8 @@ const tabletopsSlice = createSlice({
         } 
     }
 })
+
+export const { tableTopAdded } = tabletopsSlice.actions
 
 export default tabletopsSlice.reducer
 

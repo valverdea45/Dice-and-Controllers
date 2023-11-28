@@ -18,7 +18,7 @@ function Home() {
             <div>
                 <h1> Welcome to Dice and Controllers!</h1>
                 <br/>
-                <p>try logging in for good deals!</p>
+                <p>try logging in to add games to review!</p>
             </div>
             }
 

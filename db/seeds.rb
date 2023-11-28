@@ -8,8 +8,8 @@
 
 adrian = User.create(username: "adrian", password: "123456", password_confirmation: "123456", email: "adrian@adrian.com")
 
-chess = TableTop.create(name: "Chess", price: 10.99, type_of: "tabletop", description: "the best table top", image: "https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL2NoZXNzLTQuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoiMTIwMCJ9fX0=")
+chess = TableTop.create(name: "Chess", price: 10.99, type_of: "tabletop", description: "a very strategy based game who the winner is who ever can check mate or kill the other persons king first", image: "https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL2NoZXNzLTQuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoiMTIwMCJ9fX0=")
 
-mw3 = VideoGame.create(name: "MW3", price: 61.99, type_of: "videogame", description: "this is the best video game", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFh4n6gkmmKoE-BkJsiDCVjBSNW0iqiE8iMdBdMop7&s")
+mw3 = VideoGame.create(name: "MW3", price: 61.99, type_of: "videogame", description: "a very competitive first person shooter", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFh4n6gkmmKoE-BkJsiDCVjBSNW0iqiE8iMdBdMop7&s")
 
-# r1 = mw3.reviews.create(body: "this game is way to expensive bro", item_id: mw3.id, user_id: adrian.id, likes: 0 )
+connect_4 = TableTop.create(name: "Connect Four", price: 32.99, type_of: "tabletop", description: "a table top who the winner is the person who can connect all four chips first", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjhH9hilSV7Fc6j3q43u2y43JiP4MX3GHdgw&usqp=CAU")

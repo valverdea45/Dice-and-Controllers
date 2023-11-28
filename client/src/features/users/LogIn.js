@@ -55,7 +55,7 @@ function LogIn() {
                 <br/>
                 <label>Password</label>
                 <br/>
-                <input onChange={(e) => setPassword(e.target.value)} value={password} type="text"/>
+                <input onChange={(e) => setPassword(e.target.value)} value={password} type="password"/>
                 <br/>
                 <button type="submit">Log In</button>
                 {errors ? (<p>{`${errors}`}</p>) : null}

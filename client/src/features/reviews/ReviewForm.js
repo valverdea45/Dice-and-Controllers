@@ -64,11 +64,9 @@ function ReviewForm({ handleClick, item, setShowReviewForm }) {
                         setShowReviewForm(false)
                     })
                 } else {
-                
                     res.json().then((error) => {
                         setErrors(error.errors)
                     })
-
                 }
             })
 

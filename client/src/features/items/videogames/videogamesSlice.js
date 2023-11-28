@@ -15,7 +15,9 @@ const videogamesSlice = createSlice({
     name: "videogames",
     initialState,
     reducers: {
-
+        videoGameAdded(state, action) {
+            state.entities.push(action.payload)
+        }
     },
     extraReducers: {
         [fetchVideoGames.pending](state){
@@ -27,5 +29,7 @@ const videogamesSlice = createSlice({
         }
     }
 })
+
+export const { videoGameAdded } = videogamesSlice.actions
 
 export default videogamesSlice.reducer

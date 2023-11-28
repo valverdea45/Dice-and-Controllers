@@ -13,10 +13,8 @@ function NavBar() {
             {user ? 
             <div>
               <NavLink exact to="/Profile">Profile</NavLink>
-              <br/> 
-              <NavLink>Deals</NavLink>
               <br/>
-              <NavLink>Add an Item to Sell</NavLink>
+              <NavLink exact to="/AddItem">Add an Item</NavLink>
               <br/>
               <NavLink exact to="/Home">Home</NavLink>
             </div>

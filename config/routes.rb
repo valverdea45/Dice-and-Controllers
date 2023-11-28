@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  resources :video_games, only: [:index]
-  resources :table_tops, only: [:index]
+  resources :video_games, only: [:index, :create]
+  resources :table_tops, only: [:index, :create]
   resources :video_game_reviews, only: [:index, :create, :destroy, :update]
   resources :table_top_reviews, only: [:index, :create, :destroy, :update]
   
