@@ -16,8 +16,6 @@ function ItemsContainer() {
         return item.name.toLowerCase().includes(search[0].toLowerCase())
     }) 
 
-    console.log(itemsFiltered)
-
 
     return (
         <div>

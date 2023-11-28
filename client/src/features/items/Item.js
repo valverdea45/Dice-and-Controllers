@@ -16,8 +16,6 @@ function Item()  {
         return <p>loading...</p>
     }
 
-    console.log(item)
-
     return (
         <div>
             <h3>{item.name}</h3>

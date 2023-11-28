@@ -11,7 +11,7 @@ function ReviewList({ item }) {
         })
 
         const reviewsToRender = correctReviews.map((review) => {
-            return <Review review={review} item={item}/>
+            return <Review key={review.id} review={review} item={item}/>
         })
 
         return (

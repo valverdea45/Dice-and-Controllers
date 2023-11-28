@@ -6,7 +6,7 @@ function ItemsList({ itemsFiltered }) {
     
 
      const toBeRendered = itemsFiltered.map((item) => {
-        return <ItemCard item={item}/>
+        return <ItemCard key={item.name} item={item}/>
     })
 
     return (
