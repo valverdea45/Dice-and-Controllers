@@ -48,9 +48,12 @@ function App() {
  
 
 
-  
-
   return (
+    <div style={{
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "center"
+    }}>
     <div>
       <NavBar/>
         <Routes>
@@ -63,6 +66,7 @@ function App() {
           <Route path="/SignUp" element={<SignUp/>}/>
           <Route path="/AddItem" element={<AddItem/>}/>
         </Routes>
+    </div>
     </div>
   );
 }

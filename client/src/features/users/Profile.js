@@ -29,9 +29,9 @@ function Profile() {
     }
 
     return (
-        <div>
+        <div className="background">
             <h3>Profile Page</h3>
-            <br/>
+            
             <p>username: {user.username}</p>
             <p>email: {user.email}</p>
             <button onClick={handleLogoutClick} >Log Out</button>

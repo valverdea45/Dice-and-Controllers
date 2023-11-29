@@ -30,11 +30,17 @@ function Item() {
 
     return (
         <div>
-            <h3>{item.name}</h3>
-            <img style={imageDisplay} src={item.image} alt={item.name} />
-            <p>price: {item.price}</p>
-            <p>game type: {item.type_of}</p>
-            <p>description: {item.description}</p>
+            <div style={{
+                padding: "8px",
+                backgroundColor: "lightyellow",
+                borderRadius: "10px"
+            }}>
+                <h3>{item.name}</h3>
+                <img style={imageDisplay} src={item.image} alt={item.name} />
+                <p>price: ${item.price}</p>
+                <p>game type: {item.type_of}</p>
+                <p>description: {item.description}</p> 
+            </div>
             <br />
             <ReviewContainer item={item} />
 

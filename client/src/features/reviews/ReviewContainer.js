@@ -19,8 +19,8 @@ function ReviewContainer({ item }) {
     }
 
     return (
-        <div>
-            <h4>Reviews</h4>
+        <div className="review">
+            <h4 className="reviewheader"> Reviews</h4>
             { showReviewForm ? 
             <div>
                 <ReviewForm item={item} handleClick={handleClick} setShowReviewForm={setShowReviewForm}/>

@@ -11,18 +11,27 @@ function ItemCard({ item }) {
     }
 
 
-    
 
     function handleClick() {
         navigate(`/Item/${item.type_of}s/${item.id}`)
     }
 
+  
+
     return (
-        <div onClick={handleClick}>
-            <p>{item.name}</p>
+        <div className="card" onClick={handleClick}>
+            
+            
+        <div style={{
+            flexGrow: 1
+        }}>
+            <h3>{item.name}</h3>
             <img style={imageDisplay} src={item.image} alt={item.name}/>
             <p>Price: ${item.price}</p>
             <p>Description: {item.description}</p>
+        </div>
+           
+            <img style={{ width: "30px", height: "30px"}} src={item.type_of === "videogame" ? "/joystick.png" : "/dice.png"}/>
         </div>
     )
 }

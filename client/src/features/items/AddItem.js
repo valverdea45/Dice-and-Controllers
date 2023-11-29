@@ -94,7 +94,7 @@ function AddItem() {
 
 
     return (
-        <div>
+        <div className="background">
             <h3> Add table tops or video games to review! </h3>
             <form onSubmit={handleSubmit}>
                 <label>Name:</label>

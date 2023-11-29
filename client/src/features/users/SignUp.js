@@ -43,7 +43,7 @@ function SignUp() {
     }
 
     return (
-        <div>
+        <div className="background">
             <h3>Sign Up!</h3>
             <form onSubmit={handleSubmit}>
                 <label>Username:</label>

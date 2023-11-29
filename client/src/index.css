@@ -1,0 +1,30 @@
+.navbarbutton {
+    padding: 8px;
+    text-align: center;
+    border-radius: 6px;
+    background-color:   purple;
+    color: white;
+    box-shadow: 10px 10px black;
+    margin-right: 15px;
+}
+
+.card {
+    background-color: lightyellow;
+    border-radius: 10px;
+    padding: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    box-shadow: 10px 10px gray;
+}
+
+.background {
+    background-color: lightyellow;
+    padding: 8px;
+    margin-bottom: 20px;
+}
+
+.review {
+    background-color: lightblue;
+    padding: 8px;
+    box-shadow: 5px 5px gray;
+}
