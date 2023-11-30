@@ -4,6 +4,6 @@ class VideoGameReview < ApplicationRecord
 
     validates :body, presence: true
 
-    validates :body, length: { minimum: 25 }, on: :create
+    validates :body, length: { minimum: 25 }
 
 end
