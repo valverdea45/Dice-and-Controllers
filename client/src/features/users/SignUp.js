@@ -60,6 +60,7 @@ function SignUp() {
                 <br/>
                 <button type="submit" >Submit</button>
             </form>
+            <p>Passwords should have a minimum of 5 characters</p>
             <ul>
              {errors ? (errors.map((error) => <li>{`${error}`}</li>)) : null}   
             </ul>
