@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { useLocation, useParams } from "react-router-dom"
 import ReviewContainer from "../reviews/ReviewContainer"
 import { useSelector } from "react-redux"
+import ItemImageError from "./ItemImageError"
 
 function Item() {
 
@@ -40,7 +41,7 @@ function Item() {
                 borderRadius: "10px"
             }}>
                 <h3>{item.name}</h3>
-                {imageError ? <img style={imageDisplay} src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTEEXZhFhjBx7eT3vij0wlUnGZNiJzv4b_Zw&usqp=CAU"}/> : <img style={imageDisplay} src={item.image} alt={item.name} onError={handleImageError}/>}
+                {imageError ? <ItemImageError item={item}/> : <img style={imageDisplay} src={item.image} alt={item.name} onError={handleImageError}/>}
             
                 <p>price: ${item.price}</p>
                 <p>game type: {item.type_of}</p>
