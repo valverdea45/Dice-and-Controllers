@@ -36,7 +36,7 @@ function Review({ review, item }) {
             {editMode ?
                <ReviewEditForm review={review} item={item} handleEditClick={handleEditClick} setEditMode={setEditMode}/>
                 :
-                <div>
+                <div className="review">
                     <p>User: {review.username}</p>
                     <p> Review: {review.body}</p>
                     {user?.id === review.user_id ?

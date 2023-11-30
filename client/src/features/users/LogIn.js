@@ -46,7 +46,7 @@ function LogIn() {
     }
 
     return (
-        <div className="loginbackground">
+        <div className="background">
             <h3>Enter log in information</h3>
             <form onSubmit={handleSubmit}>
                 <label>Username</label>

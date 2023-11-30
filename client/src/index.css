@@ -23,8 +23,13 @@
     margin-bottom: 20px;
 }
 
-.review {
+.reviewcontainer {
     background-color: lightblue;
-    padding: 8px;
     box-shadow: 5px 5px gray;
+}
+
+.review {
+    background-color: blueviolet;
+    border-radius: 15px;
+    border-style: solid;
 }

@@ -19,7 +19,7 @@ function ReviewContainer({ item }) {
     }
 
     return (
-        <div className="review">
+        <div className="reviewcontainer">
             <h4 className="reviewheader"> Reviews</h4>
             { showReviewForm ? 
             <div>
