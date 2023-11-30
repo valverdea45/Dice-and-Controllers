@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 function ItemCard({ item }) {
 
     const navigate = useNavigate()
+    const [ imageError, setImageError ] = useState(false)
 
     const imageDisplay = {
         height: "15rem",
@@ -17,7 +18,9 @@ function ItemCard({ item }) {
         navigate(`${item.type_of}s/${item.id}`)
     }
 
-  
+    function handleImageError(){
+        setImageError(true)
+    }
 
     return (
         <div className="card" onClick={handleClick}>
@@ -27,7 +30,8 @@ function ItemCard({ item }) {
             flexGrow: 1
         }}>
             <h3>{item.name}</h3>
-            <img style={imageDisplay} src={item.image} alt={item.name}/>
+            {imageError ? <img style={imageDisplay} src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTEEXZhFhjBx7eT3vij0wlUnGZNiJzv4b_Zw&usqp=CAU"}/> : <img style={imageDisplay} src={item.image} alt={item.name} onError={handleImageError}/>}
+            
             <p>Price: ${item.price}</p>
             <p>Description: {item.description}</p>
         </div>
