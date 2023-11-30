@@ -18,6 +18,8 @@ connect_4 = TableTop.create(name: "Connect Four", price: 32.99, type_of: "tablet
 
 undertale = VideoGame.create(name: "Undertale", price: 65.99, type_of: "videogame", description: "A video game that tells a story of a human making friends with monsters or kill them?", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjsvk6cjZrc-DA3x3eI9Xccze0jJqNxIOsOA&usqp=CAU")
 
+
+
 adrian.table_top_reviews.create(body: "this game is so stratagy based its nuts", table_top_id: 1)
 
 chess.table_top_reviews.create(body: "nah this game is boring and lame", user_id: 2)

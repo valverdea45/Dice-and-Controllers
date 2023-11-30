@@ -78,10 +78,13 @@ function ReviewForm({ handleClick, item, setShowReviewForm }) {
             <form onSubmit={handleSubmit}>
                 <label>Review</label>
                 <br />
-                <input onChange={(e) => setBody(e.target.value)} value={body}/>
+                <textarea onChange={(e) => setBody(e.target.value)} value={body} rows={8} style={{ width: "500px" }}/>
+                <br/>
                 <button type="submit">Submit</button>
+                <button onClick={handleClick}>Cancel</button>
             </form>
-            <button onClick={handleClick}>Cancel</button>
+            
+            
             <ul>
                 {errors ? (errors.map((error) => <li>{`${error}`}</li>)) : null}
             </ul>

@@ -2,19 +2,19 @@ import React, { useState } from "react"
 import ReviewList from "./ReviewList"
 import ReviewForm from "./ReviewForm"
 import { useSelector } from "react-redux"
-import { useNavigate } from "react-router-dom"
+
 
 function ReviewContainer({ item }) {
 
     const user = useSelector((state) => state.users.user)
     const [ showReviewForm, setShowReviewForm ] = useState(false)
-    const navigate = useNavigate()
+    const [ error, setError ] = useState(false)
 
     function handleClick() {
         if(user) {
             setShowReviewForm((showReviewForm) => !showReviewForm)
         } else {
-          navigate("/LogIn")  
+          setError(true)  
         }
     }
 
@@ -28,6 +28,7 @@ function ReviewContainer({ item }) {
             :
             <div>
                 <button onClick={handleClick}>Write a Review</button>
+                {error ? <p>You must be logged in to write a review</p> : null }
             </div>
             }
             <ReviewList item={ item }/>

@@ -52,7 +52,7 @@ function SignUp() {
                 <br/>
                 <label>Password:</label>
                 <br/>
-                <input onChange={(e) => setPassword(e.target.value)} value={password} type="password"/>
+                <input onChange={(e) => setPassword(e.target.value)} value={password} type="text"/>
                 <br/>
                 <label>Email:</label>
                 <br/>

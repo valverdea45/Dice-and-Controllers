@@ -19,9 +19,9 @@ function NavBar() {
                 <>
                     <NavLink className="navbarbutton" exact to="/Profile">Profile</NavLink>
                     <br />
-                    <NavLink className="navbarbutton" exact to="/AddItem">Add an Item</NavLink>
+                    <NavLink className="navbarbutton" exact to="/AddItem">Add Game</NavLink>
                     <br />
-                    <NavLink className="navbarbutton" exact to="/Home">Home</NavLink>
+                    <NavLink className="navbarbutton" exact to="/">Home</NavLink>
                 </>
                 :
                 <>
@@ -29,7 +29,7 @@ function NavBar() {
                     <br />
                     <NavLink className="navbarbutton" exact to="/SignUp" >Sign Up</NavLink>
                     <br />
-                    <NavLink className="navbarbutton" exact to="/Home">Home</NavLink>
+                    <NavLink className="navbarbutton" exact to="/">Home</NavLink>
                 </>}
         </div>
     )

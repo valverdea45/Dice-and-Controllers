@@ -10,7 +10,7 @@ function Item() {
 
     const url = location.pathname
 
-    const gameType = url.split("/")[2]
+    const gameType = url.split("/")[1]
 
     const item = useSelector((state) => {
         return state[gameType].entities.find((item) => item.id === parseInt(id))

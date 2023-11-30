@@ -13,6 +13,12 @@ class User < ApplicationRecord
 
     validates :email, presence: true
 
+    validate :email_adress
     
+    def email_adress
+        unless email.match?(/.com/) && email.match?(/@/)
+            errors.add(:email, "must be valid")
+        end
+    end
     
 end
