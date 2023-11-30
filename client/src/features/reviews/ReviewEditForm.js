@@ -78,10 +78,10 @@ function ReviewEditForm({ review, item, handleEditClick, setEditMode}) {
 
 
     return (
-        <div>
+        <div className="review">
             <form onSubmit={handleEditSubmit}>
-                <p>{review.username}</p>
-                <input onChange={(e) => setBody(e.target.value)} value={body} />
+                <p>User: {review.username}</p>
+                <textarea rows={4} style={{ width: "500px" }} onChange={(e) => setBody(e.target.value)} value={body} />
                 <button type="submit">Submit</button>
             </form>
             <button onClick={handleEditClick}> Cancel </button>
