@@ -10,6 +10,7 @@ const searchSlice = createSlice({
     reducers: {
         onUpdateSearch(state, action){
             state.value.splice(0, 1, action.payload)
+          
         }
     }
 })

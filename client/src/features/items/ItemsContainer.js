@@ -1,7 +1,8 @@
-import React, { useState } from "react"
-import { useSelector } from "react-redux"
+import React, { useState, useEffect } from "react"
+import { useSelector, useDispatch } from "react-redux"
 import Search from "../search/Search"
 import ItemsList from "./ItemsList"
+import { onUpdateSearch } from "../search/searchSlice"
 
 function ItemsContainer() {
 
@@ -10,7 +11,12 @@ function ItemsContainer() {
     const search = useSelector((state) => state.search.value)
     const allItems = videogames.concat(tableTops)
     const [ filter, setFilter ] = useState("all")
+    const dispatch = useDispatch()
 
+
+    useEffect(() => {
+        dispatch(onUpdateSearch(""))
+    },[])
 
     let selectedList = [] 
 

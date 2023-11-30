@@ -1,13 +1,17 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { onUpdateSearch } from "./searchSlice"
 
 function Search() {
 
+
     const dispatch = useDispatch()
 
     function handleSearchChange(e) {
+
         dispatch(onUpdateSearch(e.target.value))
+        console.log(e.target.value)
+        
     }
 
     return (
